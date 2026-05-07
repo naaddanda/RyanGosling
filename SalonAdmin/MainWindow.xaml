@@ -1,0 +1,31 @@
+﻿<Window x:Class="SalonAdmin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Парикмахерская — Админ" Height="720" Width="1280"
+        WindowStartupLocation="CenterScreen" Background="#FFFFFF">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="#FAFAFA" BorderBrush="#DE9EB7" BorderThickness="0,0,1,0">
+            <StackPanel Margin="0,30,0,0">
+                <TextBlock Text="SALON ADMIN" FontSize="16" FontWeight="Bold" 
+                           Foreground="#DE9EB7" Margin="20,0,0,25"/>
+                <Button Content="🏠 Дашборд" Click="Nav_Click" Tag="Dashboard" Style="{StaticResource NavBtn}"/>
+                <Button Content="📅 Записи" Click="Nav_Click" Tag="Bookings" Style="{StaticResource NavBtn}"/>
+                <Button Content="👥 Сотрудники" Click="Nav_Click" Tag="Employees" Style="{StaticResource NavBtn}"/>
+                <Button Content="✂️ Услуги" Click="Nav_Click" Tag="Services" Style="{StaticResource NavBtn}"/>
+                <Button Content="📦 Склад" Click="Nav_Click" Tag="Inventory" Style="{StaticResource NavBtn}"/>
+                <Button Content="👤 Клиенты" Click="Nav_Click" Tag="Clients" Style="{StaticResource NavBtn}"/>
+                <Button Content="🏷️ Акции" Click="Nav_Click" Tag="Promotions" Style="{StaticResource NavBtn}"/>
+                <Button Content="📜 Журнал" Click="Nav_Click" Tag="Log" Style="{StaticResource NavBtn}"/>
+                <Button Content="📊 Отчёты" Click="Nav_Click" Tag="Reports" Style="{StaticResource NavBtn}"/>
+                <Button Content="⚙️ Настройки" Click="Nav_Click" Tag="Settings" Style="{StaticResource NavBtn}"/>
+            </StackPanel>
+        </Border>
+
+        <Frame Grid.Column="1" x:Name="MainFrame" NavigationUIVisibility="Hidden" Background="#FFFFFF"/>
+    </Grid>
+</Window>
