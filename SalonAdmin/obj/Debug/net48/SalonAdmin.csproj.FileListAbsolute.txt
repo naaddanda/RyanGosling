@@ -1,0 +1,117 @@
+A:\CursorProject\SalonAdmin\bin\Debug\net48\SalonAdmin.exe.config
+A:\CursorProject\SalonAdmin\bin\Debug\net48\SalonAdmin.exe
+A:\CursorProject\SalonAdmin\bin\Debug\net48\SalonAdmin.pdb
+A:\CursorProject\SalonAdmin\obj\Debug\net48\SalonAdmin.csproj.AssemblyReference.cache
+A:\CursorProject\SalonAdmin\obj\Debug\net48\MainWindow.baml
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\ClientsPage.baml
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\DashboardPage.baml
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\EmployeesPage.baml
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\JournalPage.baml
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\PromotionsPage.baml
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\RecordsPage.baml
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\ReportsPage.baml
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\ServicesPage.baml
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\SettingsPage.baml
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\StocksPage.baml
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\StoragePage.baml
+A:\CursorProject\SalonAdmin\obj\Debug\net48\App.baml
+A:\CursorProject\SalonAdmin\obj\Debug\net48\MainWindow.g.cs
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\ClientsPage.g.cs
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\DashboardPage.g.cs
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\EmployeesPage.g.cs
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\JournalPage.g.cs
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\PromotionsPage.g.cs
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\RecordsPage.g.cs
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\ReportsPage.g.cs
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\ServicesPage.g.cs
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\SettingsPage.g.cs
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\StocksPage.g.cs
+A:\CursorProject\SalonAdmin\obj\Debug\net48\Pages\StoragePage.g.cs
+A:\CursorProject\SalonAdmin\obj\Debug\net48\App.g.cs
+A:\CursorProject\SalonAdmin\obj\Debug\net48\SalonAdmin_MarkupCompile.cache
+A:\CursorProject\SalonAdmin\obj\Debug\net48\SalonAdmin.g.resources
+A:\CursorProject\SalonAdmin\obj\Debug\net48\SalonAdmin.GeneratedMSBuildEditorConfig.editorconfig
+A:\CursorProject\SalonAdmin\obj\Debug\net48\SalonAdmin.csproj.CoreCompileInputs.cache
+A:\CursorProject\SalonAdmin\obj\Debug\net48\SalonAdmin.exe
+A:\CursorProject\SalonAdmin\obj\Debug\net48\SalonAdmin.pdb
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\bin\Debug\net48\SalonAdmin.exe.config
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\bin\Debug\net48\SalonAdmin.exe
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\bin\Debug\net48\SalonAdmin.pdb
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\SalonAdmin.csproj.AssemblyReference.cache
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\SalonAdmin.exe.config
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\MainWindow.baml
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\ClientsPage.baml
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\DashboardPage.baml
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\EmployeesPage.baml
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\JournalPage.baml
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\PromotionsPage.baml
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\RecordsPage.baml
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\ReportsPage.baml
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\ServicesPage.baml
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\SettingsPage.baml
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\StocksPage.baml
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\StoragePage.baml
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\App.baml
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\MainWindow.g.cs
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\ClientsPage.g.cs
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\DashboardPage.g.cs
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\EmployeesPage.g.cs
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\JournalPage.g.cs
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\PromotionsPage.g.cs
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\RecordsPage.g.cs
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\ReportsPage.g.cs
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\ServicesPage.g.cs
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\SettingsPage.g.cs
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\StocksPage.g.cs
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\Pages\StoragePage.g.cs
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\App.g.cs
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\SalonAdmin_MarkupCompile.cache
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\SalonAdmin.g.resources
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\SalonAdmin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\SalonAdmin.csproj.CoreCompileInputs.cache
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\SalonAdmin.exe
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\SalonAdmin.pdb
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\LoginWindow.g.cs
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\SalonAdmin_MarkupCompile.lref
+C:\Users\amirh\source\repos\RyanGosling-main\SalonAdmin\obj\Debug\net48\LoginWindow.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\bin\Debug\net48\SalonAdmin.exe.config
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\bin\Debug\net48\SalonAdmin.exe
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\bin\Debug\net48\SalonAdmin.pdb
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\SalonAdmin.csproj.AssemblyReference.cache
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\MainWindow.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\ClientsPage.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\DashboardPage.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\EmployeesPage.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\JournalPage.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\PromotionsPage.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\RecordsPage.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\ReportsPage.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\ServicesPage.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\SettingsPage.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\StocksPage.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\StoragePage.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\App.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\LoginWindow.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\MainWindow.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\ClientsPage.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\DashboardPage.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\EmployeesPage.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\JournalPage.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\PromotionsPage.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\RecordsPage.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\ReportsPage.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\ServicesPage.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\SettingsPage.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\StocksPage.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\StoragePage.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\App.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\SalonAdmin_MarkupCompile.cache
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\SalonAdmin_MarkupCompile.lref
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\LoginWindow.baml
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\SalonAdmin.g.resources
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\SalonAdmin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\SalonAdmin.csproj.CoreCompileInputs.cache
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\SalonAdmin.exe
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\SalonAdmin.pdb
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\EmployeeEditPage.g.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\Pages\EmployeeEditPage.baml

@@ -1,36 +1,31 @@
-﻿using SalonAdmin.ClassApp;
 using System;
-using System.Windows;
 using System.Windows.Controls;
+using SalonAdmin.ClassApp;
 
-namespace SalonAdmin.Pages
+namespace SalonAdmin.Pages;
+
+public partial class DashboardPage : Page
 {
-    public partial class DashboardPage : Page
+    private readonly DashboardRepo _repo = new();
+
+    public DashboardPage()
     {
-        public DashboardPage()
-        {
-            InitializeComponent();
-            Loaded += DashboardPage_Loaded;
-        }
+        InitializeComponent();
+    }
 
-        private void DashboardPage_Loaded(object sender, RoutedEventArgs e)
+    private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
+    {
+        try
         {
-            LoadData();
+            TxtTodayCount.Text = _repo.GetTodayBookingsCount().ToString();
+            LstFreeMasters.ItemsSource = _repo.GetFreeMastersSummary();
+            LstLowStock.ItemsSource = _repo.GetLowStockWarning();
+            TxtWeekRevenue.Text = _repo.GetWeekRevenue().ToString("0 ₽");
         }
-
-        private void LoadData()
+        catch (Exception ex)
         {
-            try
-            {
-                tbToday.Text = DashboardRepo.GetTodayBookingsCount().ToString();
-                tbSlots.Text = DashboardRepo.GetFreeMasters();
-                tbStock.Text = DashboardRepo.GetLowStock();
-                tbRev.Text = $"{DashboardRepo.GetWeekRevenue():N0} ₽";
-            }
-            catch (Exception ex)
-            {
-                Db.ShowError(ex, "Дашборд");
-            }
+            ClassDaT.ShowError(ex, "DashboardPage.Loaded");
         }
     }
 }
+

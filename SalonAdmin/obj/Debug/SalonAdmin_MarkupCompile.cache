@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\llolo\source\repos\SalonAdmin\obj\Debug\
+A:\CursorProject\SalonAdmin\obj\Debug\
 SalonAdmin
 none
 false
 DEBUG;TRACE
-C:\Users\llolo\source\repos\SalonAdmin\App.xaml
-3-628821634
+A:\CursorProject\SalonAdmin\App.xaml
+12373287818
 
-11-199892041
-13-1310406943
-MainWindow.xaml;Pages\DashboardPage.xaml;Pages\EmployeesPage.xaml;
+21-1827290119
+8-1047862833
+MainWindow.xaml;Pages\DashboardPage.xaml;Pages\EmployeesPage.xaml;Pages\RecordsPage.xaml;Pages\ClientsPage.xaml;Pages\ServicesPage.xaml;Pages\StocksPage.xaml;Pages\ReportsPage.xaml;Pages\JournalPage.xaml;Pages\SettingsPage.xaml;Pages\StoragePage.xaml;Pages\PromotionsPage.xaml;
 
 False
 

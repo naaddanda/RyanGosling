@@ -1,63 +1,95 @@
-﻿using SalonAdmin.ClassApp;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
-namespace SalonAdmin.ClassApp
+namespace SalonAdmin.ClassApp;
+
+public sealed class BookingRepo
 {
-    public static class BookingRepo
+    public List<Booking> GetForDate(DateTime date)
     {
-        public static List<Booking> GetForDate(DateTime date)
+        const string sql = @"
+SELECT
+    b.Id_запись,
+    srv.Название AS ServiceName,
+    (emp.Фамилия + N' ' + LEFT(emp.Имя,1) + N'.') AS MasterShort,
+    (cl.Фамилия + N' ' + LEFT(cl.Имя,1) + N'.') AS ClientShort,
+    b.Дата_начала,
+    b.Дата_окончания,
+    st.Название AS StatusName,
+    b.Итоговая_стоимость
+FROM Запись b
+JOIN Услуга srv ON srv.Id_услуга = b.Id_услуга
+JOIN Сотрудник emp ON emp.Id_сотрудник = b.Id_сотрудник
+JOIN Клиент cl ON cl.Id_клиент = b.Id_клиент
+JOIN Статус_записи st ON st.Id_статус = b.Id_статус
+WHERE CAST(b.Дата_начала AS DATE) = @dt
+ORDER BY b.Дата_начала";
+
+        var list = new List<Booking>();
+        using var conn = ClassDaT.GetConnection();
+        using var cmd = new SqlCommand(sql, conn);
+        cmd.Parameters.AddWithValue("@dt", date.Date);
+        using var r = cmd.ExecuteReader();
+        while (r.Read())
         {
-            var list = new List<Booking>();
-            using var conn = ClassDat.GetConnection(); // ✅ Заменено на ClassDat
-            var cmd = new SqlCommand(@"
-                SELECT z.Id_запись, u.Название, 
-                       s.Фамилия + ' ' + LEFT(s.Имя,1) + '.',
-                       c.Фамилия + ' ' + LEFT(c.Имя,1) + '.',
-                       z.Дата_начала, z.Дата_окончания, st.Название, 
-                       z.Итоговая_стоимость, z.Не_явился
-                FROM Запись z
-                JOIN Услуга u ON z.Id_услуга = u.Id_услуга
-                JOIN Сотрудник s ON z.Id_сотрудник = s.Id_сотрудник
-                JOIN Клиент c ON z.Id_клиент = c.Id_клиент
-                JOIN Статус_записи st ON z.Id_статус = st.Id_статус
-                WHERE CAST(z.Дата_начала AS DATE) = @dt
-                ORDER BY z.Дата_начала", conn);
-
-            cmd.Parameters.AddWithValue("@dt", date.Date);
-
-            using var r = cmd.ExecuteReader();
-            while (r.Read())
+            list.Add(new Booking
             {
-                list.Add(new Booking
-                {
-                    Id = r.GetInt32(0),
-                    Услуга = r.GetString(1),
-                    Мастер = r.GetString(2),
-                    Клиент = r.GetString(3),
-                    Начало = r.GetDateTime(4),
-                    Конец = r.GetDateTime(5),
-                    Статус = r.GetString(6),
-                    Итог = r.IsDBNull(7) ? (decimal?)null : r.GetDecimal(7), // ✅ Явный каст против CS8957
-                    НеЯвился = !r.IsDBNull(8) && r.GetBoolean(8)
-                });
-            }
-            return list;
+                Id = r.GetInt32(0),
+                Услуга = r.IsDBNull(1) ? "" : r.GetString(1),
+                Мастер = r.IsDBNull(2) ? "" : r.GetString(2),
+                Клиент = r.IsDBNull(3) ? "" : r.GetString(3),
+                Начало = r.IsDBNull(4) ? date.Date : r.GetDateTime(4),
+                Конец = r.IsDBNull(5) ? date.Date : r.GetDateTime(5),
+                Статус = r.IsDBNull(6) ? "" : r.GetString(6),
+                Итог = r.IsDBNull(7) ? (decimal?)null : r.GetDecimal(7)
+            });
         }
 
-        public static void UpdateStatus(int bookingId, string newStatus, bool noShow = false)
-        {
-            using var conn = ClassDat.GetConnection(); // ✅ Заменено на ClassDat
-            var cmd = new SqlCommand(@"
-                UPDATE Запись 
-                SET Id_статус = (SELECT Id_статус FROM Статус_записи WHERE Название = @st),
-                    Не_явился = @ns
-                WHERE Id_запись = @id", conn);
-            cmd.Parameters.AddWithValue("@st", newStatus);
-            cmd.Parameters.AddWithValue("@ns", noShow);
-            cmd.Parameters.AddWithValue("@id", bookingId);
-            cmd.ExecuteNonQuery();
-        }
+        return list;
+    }
+
+    public void UpdateStatus(int bookingId, string newStatus)
+    {
+        const string sql = @"
+UPDATE Запись
+SET Id_статус = (SELECT TOP 1 Id_статус FROM Статус_записи WHERE Название = @st)
+WHERE Id_запись = @id";
+
+        using var conn = ClassDaT.GetConnection();
+        using var cmd = new SqlCommand(sql, conn);
+        cmd.Parameters.AddWithValue("@st", newStatus);
+        cmd.Parameters.AddWithValue("@id", bookingId);
+        cmd.ExecuteNonQuery();
+    }
+
+    public List<string> GetStatuses()
+    {
+        const string sql = @"SELECT Название FROM Статус_записи ORDER BY Id_статус";
+        var list = new List<string>();
+        using var conn = ClassDaT.GetConnection();
+        using var cmd = new SqlCommand(sql, conn);
+        using var r = cmd.ExecuteReader();
+        while (r.Read())
+            list.Add(r.IsDBNull(0) ? "" : r.GetString(0));
+        return list.Where(s => !string.IsNullOrWhiteSpace(s)).ToList();
+    }
+
+    public List<string> GetMasters()
+    {
+        const string sql = @"
+SELECT (Фамилия + N' ' + LEFT(Имя,1) + N'.') AS MasterShort
+FROM Сотрудник
+ORDER BY Фамилия, Имя";
+
+        var list = new List<string>();
+        using var conn = ClassDaT.GetConnection();
+        using var cmd = new SqlCommand(sql, conn);
+        using var r = cmd.ExecuteReader();
+        while (r.Read())
+            list.Add(r.IsDBNull(0) ? "" : r.GetString(0));
+        return list.Where(s => !string.IsNullOrWhiteSpace(s)).ToList();
     }
 }
+

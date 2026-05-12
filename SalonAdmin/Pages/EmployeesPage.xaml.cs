@@ -1,62 +1,112 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using SalonAdmin.ClassApp;
 
-namespace SalonAdmin.Pages
+namespace SalonAdmin.Pages;
+
+public partial class EmployeesPage : Page
 {
-    public partial class EmployeesPage : Page
+    private List<Employee> _allEmployees = new();
+
+    public EmployeesPage()
     {
-        public EmployeesPage()
+        InitializeComponent();
+    }
+
+    private void Page_Loaded(object sender, RoutedEventArgs e)
+    {
+        try
         {
-            InitializeComponent();
-            Loaded += EmployeesPage_Loaded;
+            System.Diagnostics.Debug.WriteLine("🔄 Загрузка сотрудников...");
+            _allEmployees = EmployeeRepo.GetAll();
+            System.Diagnostics.Debug.WriteLine($"✅ Загружено: {_allEmployees.Count} записей");
+
+            Dg.ItemsSource = _allEmployees;
+            System.Diagnostics.Debug.WriteLine($"📊 ItemsSource установлен, ActualCount: {Dg.Items.Count}");
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"❌ Ошибка: {ex.Message}");
+            ClassDaT.ShowError(ex, "EmployeesPage.Loaded");
+        }
+    }
+
+    private void TxtSearch_GotFocus(object sender, RoutedEventArgs e)
+    {
+        if (TxtSearch?.Text.Trim() == "Поиск по ФИО...")
+        {
+            TxtSearch.Text = "";
+            TxtSearch.Foreground = Brushes.Black;
+        }
+    }
+
+    private void TxtSearch_LostFocus(object sender, RoutedEventArgs e)
+    {
+        if (string.IsNullOrWhiteSpace(TxtSearch?.Text))
+        {
+            TxtSearch.Text = "Поиск по ФИО...";
+            TxtSearch.Foreground = new SolidColorBrush(Color.FromRgb(0x99, 0x99, 0x99));
+        }
+    }
+
+    private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        if (Dg == null || TxtSearch == null) return;
+
+        var raw = TxtSearch.Text.Trim();
+        if (string.IsNullOrWhiteSpace(raw) || raw == "Поиск по ФИО...")
+        {
+            Dg.ItemsSource = _allEmployees;
+            return;
         }
 
-        private void EmployeesPage_Loaded(object sender, RoutedEventArgs e)
+        try
         {
-            Load();
+            var filtered = _allEmployees.Where(emp =>
+                emp.FullName.IndexOf(raw, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                emp.Телефон.IndexOf(raw, StringComparison.OrdinalIgnoreCase) >= 0
+            ).ToList();
+            Dg.ItemsSource = filtered;
         }
-
-        private void Txt_GotFocus(object sender, RoutedEventArgs e)
+        catch (Exception ex)
         {
-            if (txtSearch.Text == "Поиск по ФИО...")
-                txtSearch.Text = "";
+            ClassDaT.ShowError(ex, "EmployeesPage.Search");
         }
+    }
 
-        private void Txt_LostFocus(object sender, RoutedEventArgs e)
+    // ✅ Кнопка Edit — получает Employee через CommandParameter
+    private void BtnEdit_Click(object sender, RoutedEventArgs e)
+    {
+        if (sender is Button btn && btn.CommandParameter is Employee emp)
         {
-            if (string.IsNullOrWhiteSpace(txtSearch.Text))
-                txtSearch.Text = "Поиск по ФИО...";
+            NavigationService?.Navigate(new EmployeeEditPage(emp));
         }
+    }
 
-        private void Edit_Click(object sender, RoutedEventArgs e)
+    // ✅ Кнопка Vacation — получает Employee и показывает заглушку
+    private void BtnVacation_Click(object sender, RoutedEventArgs e)
+    {
+        if (sender is Button btn && btn.CommandParameter is Employee emp)
         {
-            // TODO: модалка редактирования
-        }
+            var isNowVacation = emp.Статус == "Отпуск";
+            var action = isNowVacation ? "вернуть с отпуска" : "отправить в отпуск";
+            var newStatus = isNowVacation ? "Активен" : "Отпуск";
 
-        private void Vac_Click(object sender, RoutedEventArgs e)
-        {
-            if (sender is Button btn && btn.Tag is int id)
+            var result = MessageBox.Show(
+                $"{action} сотрудника {emp.FullName}?\n" +
+                $"Статус: {emp.Статус} → {newStatus}",
+                "Подтверждение",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
             {
-                var emp = EmployeeRepo.GetById(id);
-                if (emp != null)
-                {
-                    EmployeeRepo.ToggleVacation(id, emp.Статус != "Отпуск");
-                    Load();
-                }
-            }
-        }
-
-        private void Load()
-        {
-            try
-            {
-                dg.ItemsSource = EmployeeRepo.GetAll();
-            }
-            catch (Exception ex)
-            {
-                Db.ShowError(ex, "Сотрудники");
+                EmployeeRepo.ToggleVacation(emp.Id, !isNowVacation);
+                Page_Loaded(null, null); // перезагрузка списка
             }
         }
     }

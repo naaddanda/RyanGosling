@@ -1,0 +1,20 @@
+﻿SalonAdmin
+
+
+winexe
+C#
+.cs
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\obj\Debug\net48\
+SalonAdmin
+none
+false
+TRACE;DEBUG;NETFRAMEWORK;NET48;NET30_OR_GREATER;NET35_OR_GREATER;NET40_OR_GREATER;NET45_OR_GREATER;NET451_OR_GREATER;NET452_OR_GREATER;NET46_OR_GREATER;NET461_OR_GREATER;NET462_OR_GREATER;NET47_OR_GREATER;NET471_OR_GREATER;NET472_OR_GREATER;NET48_OR_GREATER
+C:\Users\llolo\OneDrive\Рабочий стол\SalonAdmin\App.xaml
+14-1080301615
+
+30743433247
+19540559201
+LoginWindow.xaml;MainWindow.xaml;Pages\ClientsPage.xaml;Pages\DashboardPage.xaml;Pages\EmployeeEditPage.xaml;Pages\EmployeesPage.xaml;Pages\JournalPage.xaml;Pages\PromotionsPage.xaml;Pages\RecordsPage.xaml;Pages\ReportsPage.xaml;Pages\ServicesPage.xaml;Pages\SettingsPage.xaml;Pages\StocksPage.xaml;Pages\StoragePage.xaml;
+
+True
+

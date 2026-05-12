@@ -1,49 +1,57 @@
-﻿<Page x:Class="SalonAdmin.Pages.DashboardPage"
+<Page x:Class="SalonAdmin.Pages.DashboardPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      Background="#FFFFFF">
-    <Grid Margin="30">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+      Background="{StaticResource BgBrush}"
+      Loaded="Page_Loaded">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="24">
+            <TextBlock Text="🏠 Дашборд" FontSize="22" FontWeight="SemiBold" />
 
-        <TextBlock Text="Утренняя сводка" FontSize="22" FontWeight="Bold" 
-                   Foreground="#333333" Margin="0,0,0,20"/>
+            <UniformGrid Columns="2" Rows="2" Margin="0,16,0,0">
+                <!-- Записей на сегодня -->
+                <Border Margin="8" Background="White" BorderBrush="#EEE" BorderThickness="1" CornerRadius="14" Padding="16">
+                    <StackPanel>
+                        <TextBlock Text="Записей на сегодня" Foreground="{StaticResource TextLightBrush}" />
+                        <TextBlock x:Name="TxtTodayCount" Text="—" FontSize="32" FontWeight="SemiBold" Margin="0,6,0,0"/>
+                    </StackPanel>
+                </Border>
 
-        <UniformGrid Grid.Row="1" Rows="2" Columns="2" Margin="0,0,0,20">
-            <Border Background="#FFFFFF" BorderBrush="#DE9EB7" BorderThickness="1" 
-                    CornerRadius="6" Margin="4" Padding="20">
-                <StackPanel>
-                    <TextBlock Text="Записей на сегодня" Foreground="#666666"/>
-                    <TextBlock x:Name="tbToday" Text="0" FontSize="34" 
-                               FontWeight="Bold" Foreground="#DE9EB7" Margin="0,8,0,0"/>
-                </StackPanel>
-            </Border>
-            <Border Background="#FFFFFF" BorderBrush="#DE9EB7" BorderThickness="1" 
-                    CornerRadius="6" Margin="4" Padding="20">
-                <StackPanel>
-                    <TextBlock Text="Свободные окна мастеров" Foreground="#666666"/>
-                    <TextBlock x:Name="tbSlots" Text="—" FontSize="14" 
-                               Foreground="#333333" Margin="0,8,0,0" TextWrapping="Wrap"/>
-                </StackPanel>
-            </Border>
-            <Border Background="#FFFFFF" BorderBrush="#FF5C5C" BorderThickness="1" 
-                    CornerRadius="6" Margin="4" Padding="20">
-                <StackPanel>
-                    <TextBlock Text="⚠️ Расходники к концу" Foreground="#FF5C5C" FontWeight="SemiBold"/>
-                    <TextBlock x:Name="tbStock" Text="—" FontSize="14" 
-                               Foreground="#333333" Margin="0,8,0,0" TextWrapping="Wrap"/>
-                </StackPanel>
-            </Border>
-            <Border Background="#FFFFFF" BorderBrush="#DE9EB7" BorderThickness="1" 
-                    CornerRadius="6" Margin="4" Padding="20">
-                <StackPanel>
-                    <TextBlock Text="Выручка за 7 дней" Foreground="#666666"/>
-                    <TextBlock x:Name="tbRev" Text="0 ₽" FontSize="34" 
-                               FontWeight="Bold" Foreground="#DE9EB7" Margin="0,8,0,0"/>
-                </StackPanel>
-            </Border>
-        </UniformGrid>
-    </Grid>
+                <!-- Свободные окна -->
+                <Border Margin="8" Background="White" BorderBrush="#EEE" BorderThickness="1" CornerRadius="14" Padding="16">
+                    <StackPanel>
+                        <TextBlock Text="Свободные окна мастеров" Foreground="{StaticResource TextLightBrush}" />
+                        <ItemsControl x:Name="LstFreeMasters" Margin="0,8,0,0">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" Margin="0,2,0,0"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </Border>
+
+                <!-- Расходники -->
+                <Border Margin="8" Background="White" BorderBrush="#EEE" BorderThickness="1" CornerRadius="14" Padding="16">
+                    <StackPanel>
+                        <TextBlock Text="Расходники к концу" Foreground="{StaticResource TextLightBrush}" />
+                        <ItemsControl x:Name="LstLowStock" Margin="0,8,0,0">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" Foreground="#C62828" Margin="0,2,0,0"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </Border>
+
+                <!-- Выручка -->
+                <Border Margin="8" Background="White" BorderBrush="#EEE" BorderThickness="1" CornerRadius="14" Padding="16">
+                    <StackPanel>
+                        <TextBlock Text="Выручка за 7 дней" Foreground="{StaticResource TextLightBrush}" />
+                        <TextBlock x:Name="TxtWeekRevenue" Text="—" FontSize="32" FontWeight="SemiBold" Margin="0,6,0,0"/>
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+        </StackPanel>
+    </ScrollViewer>
 </Page>
